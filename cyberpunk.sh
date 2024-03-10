@@ -1,9 +1,34 @@
 #!/bin/bash
 # Colored "Cyberpunk" letter
 
-echo -e "${r}             Hack the System!             ${e}"
-echo -e "${r}             Code By Cyber Punk!            ${e}"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+MAGENTA='\033[0;35m'
+CYAN='\033[0;36m'
+WHITE='\033[1;37m'
+RESET='\033[0m'
 
+# Function to print big letters
+print_big_letters() {
+    text="$1"
+    color="$2"
+
+    echo -e "${color}"
+    figlet -f slant "${text}"
+    echo -e "${RESET}"
+}
+
+# Usage example
+print_big_letters "CyberPunker" "${CYAN}"
+
+echo -e "${BLUE}${bold}---------------Code by Muarij Arshad and Muhammad Ibrahim---------------${RESET}"
+
+# Colored "Cyberpunk" letter
+echo -e "${BLUE}${bold}**************          Hack the System!      *************       ${e}"
+echo -e "${BLUE}${bold}**************         Code By Cyber Punk     **************         ${RESET}" 
+#
 # selecting domain and targets
 read -p "Whats Your Domain :" target
 read -p "Name of Output Dirctory :" output
