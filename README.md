@@ -10,11 +10,11 @@ Enumerate IP addresses associated with the target domain and perform a comprehen
 Note: This script is intended for authorized penetration testing and bug bounty purposes only. It should not be used for unauthorized activities or to target systems without proper authorization. Always ensure that you have explicit permission from the system owner before conducting any security testing activities.
 
 # cyberpunk
-##Installation
+#Installation
 sudo git clone https://github.com/muhamma-ibrahim/cyberpunk.git
 cd cyberpunk
 chmod +777 install.sh
 sudo ./install.sh
 chmod +777 cyberpunk.sh
-##Run 
+#Run 
 sudo ./cyberpunk.sh
