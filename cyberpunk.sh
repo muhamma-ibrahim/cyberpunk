@@ -1,5 +1,13 @@
 #!/bin/bash
-
+# Colored "Cyberpunk" letter
+echo -e "${g}███╗   ███╗ █████╗ ███████╗███████╗${e}"
+echo -e "${g}████╗ ████║██╔══██╗╚══███╔╝╚════██║${e}"
+echo -e "${g}██╔████╔██║███████║  ███╔╝  ████╔╝${e}"
+echo -e "${g}██║╚██╔╝██║██╔══██║ ███╔╝  ██╔══╝ ${e}"
+echo -e "${g}██║ ╚═╝ ██║██║  ██║███████╗███████╗${e}"
+echo -e "${g}╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝${e}"
+echo -e "${r}             Hack the System!             ${e}"
+echo -e "${r}             Code By Cyber Punk!            ${e}"
 
 # selecting domain and targets
 read -p "Whats Your Domain :" target
