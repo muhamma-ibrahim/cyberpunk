@@ -25,14 +25,15 @@ print_big_letters "CyberPunker" "${CYAN}"
 echo -e "${BLUE}${bold}---------------Code by Muarij Arshad and Muhammad Ibrahim---------------${RESET}"
 
 # Colored "Cyberpunk" letter
-echo -e "${BLUE}${bold}**************          Hack the System!      *************       ${e}"
-echo -e "${BLUE}${bold}**************         Code By Cyber Punk     **************         ${RESET}" 
+echo -e "${BLUE}${bold}*****          Hack the System!      ******       ${e}"
+echo -e "${BLUE}${bold}*****         Code By Cyber Punk     *****         ${RESET}" 
 #
 echo "installing GF patterns"
  mkdir ~/.gf
 	 git clone https://github.com/1ndianl33t/Gf-Patterns
 	 cd Gf-Patterns
-	 mv ~/Gf-Patterns/*.json ~/.gf
+	 mv * ~/.gf
+	 cd ..
 
 GOlang() {
 	printf "                                \r"
@@ -97,37 +98,37 @@ Anew() {
 }
 
 gf() {
-	printf"                                  \r"
+	printf "                                  \r"
 	 go install -v github.com/tomnomnom/gf@latest &>/dev/null
 	 printf "[+] gf installed !.\n"
 }
 
 gau() {
-	printf"                                  \r"
+	printf "                                  \r"
 	 go install github.com/lc/gau/v2/cmd/gau@latest &>/dev/null
 	 printf "[+] gau installed !.\n"
 }
 
 qsreplace() {
-	printf"                                  \r"
+	printf "                                  \r"
 	 go install github.com/tomnomnom/qsreplace@latest &>/dev/null
 	 printf "[+] qsreplace installed !.\n"
 }
 
 katana() {
-	printf"                                  \r"
+	printf "                                  \r"
 	 go install github.com/projectdiscovery/katana/cmd/katana@latest &>/dev/null
 	 printf "[+] katana installed !.\n"
 }
 
 waybackurl() {
-	printf"                                  \r"
+	printf "                                  \r"
 	 go install github.com/tomnomnom/waybackurls@latest &>/dev/null
 	 printf "[+] waybackurl installed !.\n"
 }
 
 subjs() {
-	printf"                                  \r"
+	printf "                                  \r"
 	 go install github.com/lc/subjs@latest &>/dev/null
 	 printf "[+] subjs installed !.\n"
 }
