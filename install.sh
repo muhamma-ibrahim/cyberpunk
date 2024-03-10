@@ -1,15 +1,40 @@
 #!/bin/bash
 #
-# Colored "Cyberpunk" letter
-echo -e "${g}███╗   ███╗ █████╗ ███████╗███████╗${e}"
-echo -e "${g}████╗ ████║██╔══██╗╚══███╔╝╚════██║${e}"
-echo -e "${g}██╔████╔██║███████║  ███╔╝  ████╔╝${e}"
-echo -e "${g}██║╚██╔╝██║██╔══██║ ███╔╝  ██╔══╝ ${e}"
-echo -e "${g}██║ ╚═╝ ██║██║  ██║███████╗███████╗${e}"
-echo -e "${g}╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝${e}"
-echo -e "${r}             Hack the System!             ${e}"
-echo -e "${r}             Code By Cyber Punk             ${e}" 
+# bash script to install SubEnum's dependencies 
 #
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+MAGENTA='\033[0;35m'
+CYAN='\033[0;36m'
+WHITE='\033[1;37m'
+RESET='\033[0m'
+
+# Function to print big letters
+print_big_letters() {
+    text="$1"
+    color="$2"
+
+    echo -e "${color}"
+    figlet -f slant "${text}"
+    echo -e "${RESET}"
+}
+
+# Usage example
+print_big_letters "CyberPunker" "${CYAN}"
+
+echo -e "${BLUE}${bold}---------------Code by Muarij Arshad and Muhammad Ibrahim---------------${RESET}"
+
+# Colored "Cyberpunk" letter
+echo -e "${BLUE}${bold}**************          Hack the System!      *************       ${e}"
+echo -e "${BLUE}${bold}**************         Code By Cyber Punk     **************         ${RESET}" 
+#
+echo "installing GF patterns"
+ mkdir ~/.gf
+	 git clone https://github.com/1ndianl33t/Gf-Patterns
+	 cd Gf-Patterns
+	 mv ~/Gf-Patterns/*.json ~/.gf
 
 GOlang() {
 	printf "                                \r"
@@ -55,10 +80,10 @@ Assetfinder() {
 	printf "[+] Assetfinder Installed !.\n"
 }
 
-Httprobe() {
+Httpx() {
 	printf "                                \r"
-	go install github.com/tomnomnom/httprobe@latest &>/dev/null
-	printf "[+] Httprobe Installed !.\n"
+	go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest  &>/dev/null
+	printf "[+] Httpx Installed !.\n"
 }
 
 Parallel() {
@@ -73,6 +98,64 @@ Anew() {
 	printf "[+] Anew Installed !.\n"
 }
 
+gf() {
+	printf"                                  \r"
+	 go install -v github.com/tomnomnom/gf@latest &>/dev/null
+	 printf "[+] gf installed !.\n"
+}
+
+gau() {
+	printf"                                  \r"
+	 go install github.com/lc/gau/v2/cmd/gau@latest &>/dev/null
+	 printf "[+] gau installed !.\n"
+}
+
+qsreplace() {
+	printf"                                  \r"
+	 go install github.com/tomnomnom/qsreplace@latest &>/dev/null
+	 printf "[+] qsreplace installed !.\n"
+}
+
+katana() {
+	printf"                                  \r"
+	 go install github.com/projectdiscovery/katana/cmd/katana@latest &>/dev/null
+	 printf "[+] katana installed !.\n"
+}
+
+waybackurl() {
+	printf"                                  \r"
+	 go install github.com/tomnomnom/waybackurls@latest &>/dev/null
+	 printf "[+] waybackurl installed !.\n"
+}
+
+subjs() {
+	printf"                                  \r"
+	 go install github.com/lc/subjs@latest &>/dev/null
+	 printf "[+] subjs installed !.\n"
+}
+
+
+massscan(){
+	sudo apt-get --assume-yes install git make gcc
+git clone https://github.com/robertdavidgraham/masscan
+cd masscan
+make
+make install
+make -j
+}
+
+subzy() {
+	printf"                                  \r"
+	 go install -v github.com/LukaSikic/subzy@latest  &>/dev/null
+	 printf "[+] subzy installed !.\n"
+}
+
+xargs() {
+	printf"                                  \r"
+	 go install github.com/gruntwork-io/git-xargs@latest &>/dev/null
+	 printf "[+] xargs installed !.\n"
+}
+
 hash go 2>/dev/null && printf "[!] Golang is already installed.\n" || { printf "[+] Installing GOlang!" && GOlang; } 
 
 
@@ -80,9 +163,17 @@ hash findomain 2>/dev/null && printf "[!] Findomain is already installed.\n" || 
 hash subfinder 2>/dev/null && printf "[!] subfinder is already installed.\n" || { printf "[+] Installing subfinder!" && Subfinder; }
 hash amass 2>/dev/null && printf "[!] Amass is already installed.\n" || { printf "[+] Installing Amass!" && Amass; }
 hash assetfinder 2>/dev/null && printf "[!] Assetfinder is already installed.\n" || { printf "[+] Installing Assetfinder!" && Assetfinder; }
-hash httprobe 2>/dev/null && printf "[!] Httprobe is already installed.\n" || { printf "[+] Installing Httprobe!" && Httprobe; }
+hash httpx 2>/dev/null && printf "[!] Httpx is already installed.\n" || { printf "[+] Installing Httpx!" && Httpx; }
 hash parallel 2>/dev/null && printf "[!] Parallel is already installed.\n" || { printf "[+] Installing Parallel!" && Parallel; }
 hash anew 2>/dev/null && printf "[!] Anew is already installed.\n" || { printf "[+] Installing Anew!" && Anew; }
+hash gf 2>/dev/null && printf "[!] gf is already installed.\n" || { printf "[+] Installing gf!" && gf; }
+hash masscan 2>/dev/null && printf "[!] masscan is already installed.\n" || { printf "[+] Installing masscan!" && masscan; }
+hash xargs 2>/dev/null && printf "[!] xargs is already installed.\n" || { printf "[+] Installing margs!" && margs; }
+hash subzy 2>/dev/null && printf "[!] subzy is already installed.\n" || { printf "[+] Installing subzy!" && subzy; }
+hash subjs 2>/dev/null && printf "[!] subjs is already installed.\n" || { printf "[+] Installing subjs!" && subjs; }
+hash waybackurl 2>/dev/null && printf "[!] waybackurl is already installed.\n" || { printf "[+] Installing waybackurl!" && waybackurl; }
+hash gau 2>/dev/null && printf "[!] gau is already installed.\n" || { printf "[+] Installing gau!" && gau; }
+hash qsereplace 2>/dev/null && printf "[!] qsreplace is already installed.\n" || { printf "[+] Installing qsereplace!" && qsreplace; }
 
 list=(
 	go
@@ -90,9 +181,18 @@ list=(
 	subfinder
 	amass
 	assetfinder
-	httprobe
+	httpx
 	parallel
  	anew
+ 	gf
+ 	massscan
+ 	xargs
+ 	subzy
+ 	subjs
+ 	waybackurl
+ 	gau
+ 	qsreplace
+ 	
 	)
 
 r="\e[31m"
