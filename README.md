@@ -11,10 +11,17 @@ Note: This script is intended for authorized penetration testing and bug bounty 
 
 # cyberpunk
 #Installation
+
 sudo git clone https://github.com/muhamma-ibrahim/cyberpunk.git
+
 cd cyberpunk
+
 chmod +777 install.sh
+
 sudo ./install.sh
+
 chmod +777 cyberpunk.sh
+
 #Run 
+
 sudo ./cyberpunk.sh
