@@ -25,3 +25,6 @@ chmod +777 cyberpunk.sh
 #Run 
 
 sudo ./cyberpunk.sh
+
+
+=> If any tool is not installing please try it manually .
