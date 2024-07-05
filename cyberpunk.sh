@@ -94,8 +94,8 @@ echo "-------------------------------------------------------------------------"
 
 echo "-----------------------------------------------------------------------"
 echo "-------------------------------------------------------------------------"
-echo "Gathering urls using crawler tool"
-xargs -a uniq.txt -I@ sh -c 'gau --blacklist css,jpg,jpeg,JPEG,ott,svg,js,ttf,png,woff2,woff,eot,gif "@"' | tee -a crawler.txt
+#echo "Gathering urls using crawler tool"
+#xargs -a uniq.txt -I@ sh -c 'gau --blacklist css,jpg,jpeg,JPEG,ott,svg,js,ttf,png,woff2,woff,eot,gif "@"' | tee -a crawler.txt
 echo "-------------------------------------------------------------------------"
 echo "-------------------------------------------------------------------------"
 echo "using waybackurls"
