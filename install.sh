@@ -194,7 +194,7 @@ hash qsereplace 2>/dev/null && printf "[!] qsreplace is already installed.\n" ||
 hash dnsx 2>/dev/null && printf "[!] dnsx is already installed.\n" || { printf "[+] Installing dnsx!" && dnsx; }
 hash git-xargs 2>/dev/null && printf "[!] git-xargs is already installed.\n" || { printf "[+] Installing git-xargs!" && git-xargs; }
 hash cariddi 2>/dev/null && printf "[!] cariddi is already installed.\n" || { printf "[+] Installing cariddi!" && cariddi; }
-
+ 
 
 list=(
 	go
