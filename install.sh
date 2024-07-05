@@ -22,11 +22,11 @@ print_big_letters() {
 # Usage example
 print_big_letters "CyberPunker" "${CYAN}"
 
-echo -e "${BLUE}${bold}---------------Code by Muarij Arshad and Muhammad Ibrahim---------------${RESET}"
+echo -e "${BLUE}${bold}---------------Code by ETA---------------${RESET}"
 
 # Colored "Cyberpunk" letter
 echo -e "${BLUE}${bold}*****          Hack the System!      ******       ${e}"
-echo -e "${BLUE}${bold}*****         Code By Cyber Punk     *****         ${RESET}" 
+echo -e "${BLUE}${bold}*****         cyberPunker     *****         ${RESET}" 
 #
 echo "installing GF patterns"
  mkdir ~/.gf
