@@ -97,6 +97,24 @@ Anew() {
 	printf "[+] Anew Installed !.\n"
 }
 
+Dnsx() {
+	printf "                                \r"
+	go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest &>/dev/null
+	printf "[+] Dnsx Installed !.\n"
+}
+
+Git-xargs() {
+	printf "                                \r"
+	go install github.com/gruntwork-io/git-xargs@latest &>/dev/null
+	printf "[+] Git-xargs Installed !.\n"
+}
+
+Cariddi() {
+	printf "                                \r"
+	go install -v github.com/edoardottt/cariddi/cmd/cariddi@latest &>/dev/null
+	printf "[+] Cariddi Installed !.\n"
+}
+
 gf() {
 	printf "                                  \r"
 	 go install -v github.com/tomnomnom/gf@latest &>/dev/null
@@ -173,6 +191,10 @@ hash subjs 2>/dev/null && printf "[!] subjs is already installed.\n" || { printf
 hash waybackurl 2>/dev/null && printf "[!] waybackurl is already installed.\n" || { printf "[+] Installing waybackurl!" && waybackurl; }
 hash gau 2>/dev/null && printf "[!] gau is already installed.\n" || { printf "[+] Installing gau!" && gau; }
 hash qsereplace 2>/dev/null && printf "[!] qsreplace is already installed.\n" || { printf "[+] Installing qsereplace!" && qsreplace; }
+hash dnsx 2>/dev/null && printf "[!] dnsx is already installed.\n" || { printf "[+] Installing dnsx!" && dnsx; }
+hash git-xargs 2>/dev/null && printf "[!] git-xargs is already installed.\n" || { printf "[+] Installing git-xargs!" && git-xargs; }
+hash cariddi 2>/dev/null && printf "[!] cariddi is already installed.\n" || { printf "[+] Installing cariddi!" && cariddi; }
+
 
 list=(
 	go
@@ -191,7 +213,9 @@ list=(
  	waybackurl
  	gau
  	qsreplace
- 	
+ 	cariddi
+        git-xargs
+	dnsx
 	)
 
 r="\e[31m"
